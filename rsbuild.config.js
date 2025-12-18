@@ -11,8 +11,14 @@ import { pluginReact } from '@rsbuild/plugin-react';
  * - Public directory for static assets (service worker, manifest, icons)
  * - PostCSS with Tailwind CSS support
  */
+const isProduction = process.env.NODE_ENV === 'production';
+const basePath = isProduction ? '/simple-cosplay-plan-profile/' : '/';
+
 export default defineConfig({
   plugins: [pluginReact()],
+  output: {
+    assetPrefix: basePath,
+  },
   html: {
     title: 'Image Gallery PWA',
     meta: {
@@ -21,8 +27,7 @@ export default defineConfig({
       'theme-color': '#2563eb',
     },
     tags: [
-      { tag: 'link', attrs: { rel: 'manifest', href: '/manifest.json' } },
-      { tag: 'link', attrs: { rel: 'icon', href: '/favicon.png' } },
+      { tag: 'link', attrs: { rel: 'manifest', href: 'manifest.json' } },
       {
         tag: 'meta',
         attrs: {

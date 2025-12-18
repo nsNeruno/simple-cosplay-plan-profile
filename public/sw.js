@@ -10,12 +10,13 @@
  */
 
 const CACHE_NAME = 'image-gallery-v1';
+const BASE_PATH = '/simple-cosplay-plan-profile/';
 
 // Files to cache for offline use
 const ASSETS_TO_CACHE = [
-  '/',
-  '/index.html',
-  '/favicon.png'
+  BASE_PATH,
+  `${BASE_PATH}index.html`,
+  `${BASE_PATH}favicon.png`
   // Note: JS and CSS bundles are dynamically generated, will be cached on first load
 ];
 

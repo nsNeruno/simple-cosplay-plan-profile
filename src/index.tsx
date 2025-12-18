@@ -39,8 +39,9 @@ root.render(
  */
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
+    const swPath = import.meta.env.PROD ? '/simple-cosplay-plan-profile/sw.js' : '/sw.js';
     navigator.serviceWorker
-      .register('/sw.js')
+      .register(swPath)
       .then((registration) => {
         console.log('Service Worker registered successfully:', registration);
       })
