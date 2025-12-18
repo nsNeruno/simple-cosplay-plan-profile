@@ -1,0 +1,269 @@
+/* Import Roboto font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * Custom Tailwind Component Classes
+ *
+ * These reusable classes implement Material Design principles
+ * and provide consistent styling across the application.
+ */
+
+@layer components {
+  /* ===========================================
+     MATERIAL TYPOGRAPHY CLASSES
+     Based on Material Design 3 type scale
+     =========================================== */
+
+  /**
+   * Display Large - Used for hero/main page titles
+   * Weight: Light (300), Size: 57px, Line Height: 64px
+   */
+  .text-display-large {
+    @apply text-[57px] leading-[64px] font-light tracking-tight text-white;
+  }
+
+  /**
+   * Display Medium - Used for emphasized section titles
+   * Weight: Normal (400), Size: 45px, Line Height: 52px
+   */
+  .text-display-medium {
+    @apply text-[45px] leading-[52px] font-normal tracking-tight text-white;
+  }
+
+  /**
+   * Display Small - Used for large headings
+   * Weight: Normal (400), Size: 36px, Line Height: 44px
+   */
+  .text-display-small {
+    @apply text-4xl leading-[44px] font-normal text-white;
+  }
+
+  /**
+   * Headline Large - Used for section headers
+   * Weight: Normal (400), Size: 32px, Line Height: 40px
+   */
+  .text-headline-large {
+    @apply text-[32px] leading-10 font-normal text-white;
+  }
+
+  /**
+   * Headline Medium - Used for card titles
+   * Weight: Normal (400), Size: 28px, Line Height: 36px
+   */
+  .text-headline-medium {
+    @apply text-[28px] leading-9 font-normal text-white;
+  }
+
+  /**
+   * Headline Small - Used for list item titles
+   * Weight: Normal (400), Size: 24px, Line Height: 32px
+   */
+  .text-headline-small {
+    @apply text-2xl leading-8 font-normal text-white;
+  }
+
+  /**
+   * Title Large - Used for prominent UI elements
+   * Weight: Medium (500), Size: 22px, Line Height: 28px
+   */
+  .text-title-large {
+    @apply text-[22px] leading-7 font-medium text-white;
+  }
+
+  /**
+   * Title Medium - Used for medium emphasis titles
+   * Weight: Medium (500), Size: 16px, Line Height: 24px, Letter Spacing: 0.15px
+   */
+  .text-title-medium {
+    @apply text-base leading-6 font-medium tracking-wide text-white;
+  }
+
+  /**
+   * Body Large - Used for emphasized body text
+   * Weight: Normal (400), Size: 16px, Line Height: 24px, Letter Spacing: 0.5px
+   */
+  .text-body-large {
+    @apply text-base leading-6 font-normal tracking-wide text-gray-200;
+  }
+
+  /**
+   * Body Medium - Used for regular body text
+   * Weight: Normal (400), Size: 14px, Line Height: 20px, Letter Spacing: 0.25px
+   */
+  .text-body-medium {
+    @apply text-sm leading-5 font-normal tracking-normal text-gray-300;
+  }
+
+  /**
+   * Label Large - Used for button text
+   * Weight: Medium (500), Size: 14px, Line Height: 20px, Letter Spacing: 0.1px
+   */
+  .text-label-large {
+    @apply text-sm leading-5 font-medium tracking-tight text-white;
+  }
+
+  /* ===========================================
+     SURFACE & CARD CLASSES
+     Reusable components for elevated surfaces
+     =========================================== */
+
+  /**
+   * Card Surface - Basic elevated card
+   * Dark surface with subtle border and rounded corners
+   */
+  .card-surface {
+    @apply bg-dark-surface border border-dark-border rounded-lg;
+  }
+
+  /**
+   * Card Surface Hover - Interactive card with hover effect
+   * Includes hover state with background lightening
+   */
+  .card-surface-hover {
+    @apply card-surface transition-colors hover:bg-dark-hover cursor-pointer;
+  }
+
+  /**
+   * Card Compact - Smaller padding for compact layouts
+   * Used for list items and tight spaces
+   */
+  .card-compact {
+    @apply card-surface p-3;
+  }
+
+  /**
+   * Card Standard - Standard padding for regular cards
+   * Used for most card layouts
+   */
+  .card-standard {
+    @apply card-surface p-4;
+  }
+
+  /**
+   * Card Spacious - Larger padding for prominent cards
+   * Used for hero cards and featured content
+   */
+  .card-spacious {
+    @apply card-surface p-6;
+  }
+
+  /* ===========================================
+     BUTTON CLASSES
+     Material Design button variants
+     =========================================== */
+
+  /**
+   * Button Base - Base styles for all buttons
+   * Includes typography, padding, and transitions
+   */
+  .btn-base {
+    @apply text-label-large px-6 py-2.5 rounded-lg transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-offset-2
+           focus:ring-offset-dark-bg disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /**
+   * Button Filled - Primary action button
+   * Blue background with white text
+   */
+  .btn-filled {
+    @apply btn-base bg-blue-600 hover:bg-blue-700 active:bg-blue-800
+           focus:ring-blue-500 text-white shadow-md hover:shadow-lg;
+  }
+
+  /**
+   * Button Outlined - Secondary action button
+   * Transparent with blue border
+   */
+  .btn-outlined {
+    @apply btn-base bg-transparent border-2 border-blue-600
+           hover:bg-blue-600/10 active:bg-blue-600/20
+           focus:ring-blue-500 text-blue-400;
+  }
+
+  /**
+   * Button Text - Tertiary action button
+   * No background, just text with hover effect
+   */
+  .btn-text {
+    @apply btn-base bg-transparent hover:bg-white/5 active:bg-white/10
+           focus:ring-gray-500 text-blue-400;
+  }
+
+  /**
+   * Button Danger - Destructive action button
+   * Red background for delete/remove actions
+   */
+  .btn-danger {
+    @apply btn-base bg-red-600 hover:bg-red-700 active:bg-red-800
+           focus:ring-red-500 text-white shadow-md hover:shadow-lg;
+  }
+
+  /**
+   * Button Success - Positive action button
+   * Green background for success/confirm actions
+   */
+  .btn-success {
+    @apply btn-base bg-green-600 hover:bg-green-700 active:bg-green-800
+           focus:ring-green-500 text-white shadow-md hover:shadow-lg;
+  }
+
+  /* ===========================================
+     INPUT CLASSES
+     Form input styling
+     =========================================== */
+
+  /**
+   * Input Base - Base text input styling
+   * Dark background with light text and border
+   */
+  .input-base {
+    @apply w-full px-4 py-2.5 bg-dark-surface border border-dark-border
+           rounded-lg text-white placeholder-gray-500
+           focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
+           transition-all duration-200;
+  }
+
+  /* ===========================================
+     LAYOUT CLASSES
+     Container and grid utilities
+     =========================================== */
+
+  /**
+   * Container Centered - Centered content with max width
+   * Used for main content areas
+   */
+  .container-centered {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /**
+   * Grid Responsive - Responsive grid layout
+   * Adapts column count based on screen size
+   * 1 col mobile, 2 cols tablet, 3-4 cols desktop
+   */
+  .grid-responsive {
+    @apply grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+  }
+
+  /**
+   * Grid Images - Image gallery grid with 5 columns
+   * Fixed 5-column layout for image display
+   * Responsive: 2 cols mobile, 3 cols tablet, 5 cols desktop
+   */
+  .grid-images {
+    @apply grid gap-6 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5;
+  }
+
+  /**
+   * Section Spacing - Consistent vertical spacing for sections
+   * Adds top and bottom padding
+   */
+  .section-spacing {
+    @apply py-8 md:py-12;
+  }
+}
