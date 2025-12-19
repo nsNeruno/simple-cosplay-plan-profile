@@ -17,6 +17,9 @@ const basePath = isProduction ? '/simple-cosplay-plan-profile/' : '/';
 export default defineConfig({
   plugins: [pluginReact()],
   output: {
+    distPath: {
+      root: 'docs',
+    },
     assetPrefix: basePath,
   },
   html: {

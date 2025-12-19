@@ -1,0 +1,24 @@
+{
+  "name": "Image Gallery PWA",
+  "short_name": "Gallery",
+  "description": "Offline-first image gallery for organizing photos into groups",
+  "start_url": "/simple-cosplay-plan-profile/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/simple-cosplay-plan-profile/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/simple-cosplay-plan-profile/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
